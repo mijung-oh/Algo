@@ -18,25 +18,55 @@ bool check(string string) {
 			flag = 1;//괄호있는 문장
 			break;
 		}
-		printf("%d\n", k);
 		k++;
+		if (k == len - 1)
+			break;
 	}
-	printf("falg : %d\n\n", flag);
 
 	if (flag == 1) {
+		int start;
 		for (int i = 0; i < len; i++) {
-			if (string[i] == ')' || string[i] == ']')//]나 }로 시작하는 문장은 바로 false 리턴!
-				return false;
-		}
-
-		for (int i = 0; i < len; i++) {
-			if (!s.empty() && s.top() == string[i]) {
-				s.pop();
-			}
-			else
+			if (string[i] == '(' || string[i] == '[')
+			{
 				s.push(string[i]);
+				start = i;
+				break;
+			}
+		}//첫번째 괄호 넣어주기(empty에서 에러 안나게 하기 위해)
+
+		for (int i = start + 1; i < len; i++) {
+			if (!s.empty()) {
+				if (s.top() == '(' && string[i] == ')')
+				{
+					s.pop();
+					continue;
+				}
+				else if (s.top() == '[' && string[i] == ']') {
+					s.pop();
+					continue;
+
+				}
+				else if (s.top() == '(') {
+					if (string[i] == ']' || string[i] == '[' || string[i] == '(')
+					{
+						s.push(string[i]);
+						continue;
+					}
+
+				}
+				else if (s.top() == '[') {
+					if (string[i] == '(' || string[i] == '[' || string[i] == ')')
+					{
+						s.push(string[i]);
+						continue;
+					}
+				}
+			}
 		}
 	}
+	else
+		return true;
+
 	if (s.empty())
 		return true;
 	else
@@ -46,16 +76,16 @@ bool check(string string) {
 int main() {
 	while (1) {
 		string string;
-		cin >> string;
+		getline(cin, string);
+		if (string[0] == '.') {
+			printf("yes\n");
+			return 0;
+		}
 
 		if (check(string))
-			printf("YES\n");
+			printf("yes\n");
 		else
-			printf("NO\n");
-
-		if (string[0] == '.')
-			break;
-
+			printf("no\n");
 	}
 
 }

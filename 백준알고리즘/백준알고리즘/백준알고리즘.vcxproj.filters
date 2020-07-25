@@ -18,5 +18,8 @@
     <ClCompile Include="4949균형잡힌세상.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="ㅁㅁ.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

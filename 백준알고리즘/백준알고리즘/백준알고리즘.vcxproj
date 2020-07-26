@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="1966프린터큐.cpp" />
     <ClCompile Include="4949균형잡힌세상.cpp" />
     <ClCompile Include="ㅁㅁ.cpp" />
   </ItemGroup>

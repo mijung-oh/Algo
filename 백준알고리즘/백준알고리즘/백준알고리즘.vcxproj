@@ -143,6 +143,8 @@
     <ClCompile Include="4949균형잡힌세상.cpp" />
     <ClCompile Include="ㅁㅁ.cpp" />
     <ClCompile Include="백준1010.cpp" />
+    <ClCompile Include="백준1339단어수학.cpp" />
+    <ClCompile Include="백준14501퇴사.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

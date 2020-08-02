@@ -142,6 +142,7 @@
     <ClCompile Include="1966프린터큐.cpp" />
     <ClCompile Include="4949균형잡힌세상.cpp" />
     <ClCompile Include="ㅁㅁ.cpp" />
+    <ClCompile Include="백준1010.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

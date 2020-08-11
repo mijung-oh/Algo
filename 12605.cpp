@@ -4,6 +4,8 @@
 #include<queue>
 #include<string>
 #include<iostream>
+#include<cstdio>
+#include<cstring>
 using namespace std; 
 
 int main() {
@@ -12,7 +14,7 @@ int main() {
 
 	for(int i=1; i<=n; i++){
 		char s[100];
-		gets_s(s);
+		gets(s);
 		char* tok1 = strtok(s, " ");
 		while (tok1 != NULL) {
 			d.push_back(tok1);

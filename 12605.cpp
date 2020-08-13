@@ -1,31 +1,29 @@
-#define _CRT_SECURE_NO_WARNINGS
+#DEFINE _CRT_SECURE_NO_WARNINGS
 
-#include<stdio.h>
-#include<queue>
-#include<string>
-#include<iostream>
-#include<cstdio>
-#include<cstring>
-using namespace std; 
+#INCLUDE<STDIO.H>
+#INCLUDE<QUEUE>
+#INCLUDE<STRING>
+#INCLUDE<IOSTREAM>
+USING NAMESPACE STD; 
 
-int main() {
-	deque<string>d;
-	int n; scanf("%d\n", &n);
+INT MAIN() {
+	DEQUE<STRING>D;
+	INT N; SCANF("%D\N", &N);
 
-	for(int i=1; i<=n; i++){
-		char s[100];
-		gets(s);
-		char* tok1 = strtok(s, " ");
-		while (tok1 != NULL) {
-			d.push_back(tok1);
-			tok1 = strtok(NULL, " ");
+	FOR(INT I=1; I<=N; I++){
+		CHAR S[100];
+		GETS_S(S);
+		CHAR* TOK1 = STRTOK(S, " ");
+		WHILE (TOK1 != NULL) {
+			D.PUSH_BACK(TOK1);
+			TOK1 = STRTOK(NULL, " ");
 		}
-		printf("Case #%d: ", i);
-		while (!d.empty()) {
-			cout << d.back();
-			printf(" ");
-			d.pop_back();
+		PRINTF("CASE #%D: ", I);
+		WHILE (!D.EMPTY()) {
+			COUT << D.BACK();
+			PRINTF(" ");
+			D.POP_BACK();
 		}
-		printf("\n");
+		PRINTF("\N");
 	}
 }

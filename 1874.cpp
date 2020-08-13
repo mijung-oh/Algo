@@ -45,7 +45,7 @@ int main() {
 				v2.push('+');
 				if (s.top() == input[i])
 					break;
-			}
+			}`
 			s.pop();
 			v2.push('-');
 		}

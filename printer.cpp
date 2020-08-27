@@ -64,4 +64,4 @@ int main()
             result[i + 1] = 0;
         }
     }
-}
+} 

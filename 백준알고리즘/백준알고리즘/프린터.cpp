@@ -51,7 +51,7 @@ int main() {
 	v.push_back(1);
 	v.push_back(3);
 	v.push_back(2);
-	int l = 2;
+	int l = 2; 
 	int result = solution(v, l);
 	printf("%d\n", result);
 }

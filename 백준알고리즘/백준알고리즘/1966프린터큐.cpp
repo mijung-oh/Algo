@@ -8,7 +8,7 @@
 ////3. 인쇄가 몇번째로 되는지 출력
 //queue<int> q;
 //int main()
-//{
+//{ 
 //	int testcase;
 //	int priority[110] = { 0 };
 //	int result[110] = { 0 };

@@ -54,4 +54,4 @@ int main() {
 	int l = 2; 
 	int result = solution(v, l);
 	printf("%d\n", result);
-}
+} 

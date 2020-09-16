@@ -24,7 +24,7 @@ void dfs(string begin, string target, vector<string>w,int cnt) {
 			if (begin[i] == s[i]) string_cnt++;
 		}
 		//2개가 같은 경우 그걸로 대체하고 다시 dfs
-		if (string_cnt == 2) {
+		if (string_cnt == s.length()-1) {
 			int idx = find(w.begin(), w.end(), s) - w.begin();
 			vector<string> oow = w;
 			oow.erase(oow.begin() + idx);

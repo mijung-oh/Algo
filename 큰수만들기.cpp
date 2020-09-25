@@ -1,45 +1,37 @@
 #include <string>
 #include <vector>
-
+#include <iostream>
 using namespace std;
 
-string solution(string number, int k)
-{
+string solution(string number, int k) {
 	string answer = "";
+	int mk = number.length() - k;//만들어야 하는 문자열의 길이
+	int maxIDX = 0;//큰 값의 index
 
-	int make, max_index;
-	make = number.size() - k;
-	int max = -1;
-	int size = number.size();
-	max_index = 0;
+	
 
-	while (1)
-	{
-		max = -1;
-		if (make == number.size())
-		{
-			answer += number;
-			break;
-		}
-
-		for (int i = 0; i < number.size() - make + 1; i++)
-		{
-			string s = number.substr(i, make);
-			//최대 정수 찾기
-			if (max < stoi(s))
-			{
-				max = stoi(s);
-				max_index = i;
+	while (1) {
+		string s = number.substr(0, 1);
+		maxIDX = 0;
+		for (int i = 1; i < number.length(); i++) {
+			string s2 = number.substr(i, 1);
+			if (s < s2 && number.length()-i >= mk) {
+				s = s2;
+				maxIDX = i;
 			}
-			else if (max == stoi(s))
-				continue;
 		}
 
-		answer += number[max_index];
-		make--;
-		number = number.substr(max_index + 1);
-		if (make == 0)
-			break;
+		mk--;
+		answer += number[maxIDX];
+		number = number.substr(maxIDX + 1);
+		
+		if (mk == 0) break;
+
 	}
 	return answer;
+}
+int main() {
+	string string = "985632165";
+	int k = 5;
+	cout << solution(string, k);
 }

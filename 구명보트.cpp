@@ -1,35 +1,38 @@
 #include <string>
 #include <vector>
-#include <stack>
+#include <queue>
 #include <algorithm>
 
 using namespace std;
+bool cmp(int a, int b)
+{
+    return a > b;
+}
 
-int solution(vector<int> people, int limit) {
-    int answer = 0;
-    int sum=0;
-    stack<int> s;
-    
-    sort(people.begin(), people.end());
-    // reverse(people.begin(), people.end());
-    
-    for(int i = people.size()-1; i >= 0; i--){
-        if(people[i]==0) continue;
-        
-        sum += people[i];
-        people[i]=0;
-        
-        for(int j=i-1; j>=0 ; j--){
-            if(people[j] != 0 && sum + people[j] <= limit){
-                sum += people[j];
-                people[j]=0;
-                break;
-            }
-        }
-        
-        s.push(sum);
-        sum = 0;
+int solution(vector<int> people, int limit)
+{
+    sort(people.begin(), people.end(), cmp);
+    deque<int> dq;
+    int cnt = 0;
+
+    for (int i : people)
+    {
+        dq.push_back(i);
     }
-    
-    return s.size();
+
+    while (!dq.empty())
+    {
+        if (dq.size() != 1 && dq.front() + dq.back() <= limit)
+        {
+            dq.pop_back();
+            dq.pop_front();
+            cnt++;
+        }
+        else
+        {
+            dq.pop_front();
+            cnt++;
+        }
+    }
+    return cnt;
 }

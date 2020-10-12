@@ -15,6 +15,10 @@ void bfs(int to[1001][1001]) {
 			if (to[i][j] == 1) {
 				//익은 토마토
 				q.push(make_pair(i, j));
+				dist[i][j] = 1;
+			}
+			else if (to[i][j] == -1) {
+				dist[i][j] = -1;
 			}
 		}
 	}
@@ -62,7 +66,8 @@ int main() {
 			}
 		}
 	}
+	
 
-	printf("%d", max);
+	printf("%d", max-1);
 	return 0;
 }
